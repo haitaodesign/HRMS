@@ -1,0 +1,1 @@
+server=121.42.31.90;uid=sa;pwd=LIhaitao177581+;database=HRMS
