@@ -1,4 +1,4 @@
-﻿namespace HRMS
+﻿namespace HRMS.AddressList
 {
     partial class frmAddressList
     {
@@ -122,6 +122,7 @@
             this.dgvAddressList.RowTemplate.Height = 27;
             this.dgvAddressList.Size = new System.Drawing.Size(777, 201);
             this.dgvAddressList.TabIndex = 0;
+            this.dgvAddressList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddressList_CellClick);
             // 
             // groupBox3
             // 
@@ -144,6 +145,7 @@
             this.btnExist.TabIndex = 3;
             this.btnExist.Text = "退出";
             this.btnExist.UseVisualStyleBackColor = true;
+            this.btnExist.Click += new System.EventHandler(this.btnExist_Click);
             // 
             // btnDelete
             // 
@@ -162,6 +164,7 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "修改";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 

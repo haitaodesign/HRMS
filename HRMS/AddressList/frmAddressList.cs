@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HRMS
+namespace HRMS.AddressList
 {
     public partial class frmAddressList : Form
     {
@@ -17,6 +17,8 @@ namespace HRMS
         #region 定义公共变量
         DBAccess dbaccess = new DBAccess();
         DataSet dgvAddress;
+        frmUpdate frmupdate = new frmUpdate();
+
         #endregion
         public frmAddressList()
         {
@@ -34,6 +36,30 @@ namespace HRMS
         {
             frmAdd frmadd = new frmAdd();
             frmadd.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            frmupdate.ShowDialog();
+        }
+
+        public void dgvAddressList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmupdate.Id = Convert.ToInt32(dgvAddressList.SelectedCells[0].Value);
+            frmupdate.uName = dgvAddressList.SelectedCells[1].Value.ToString();
+            frmupdate.Sex = dgvAddressList.SelectedCells[2].Value.ToString();
+            frmupdate.Phone = dgvAddressList.SelectedCells[3].Value.ToString();
+            frmupdate.WorkPhone = dgvAddressList.SelectedCells[4].Value.ToString();
+            frmupdate.HomePhone = dgvAddressList.SelectedCells[5].Value.ToString();
+            frmupdate.QQ = dgvAddressList.SelectedCells[6].Value.ToString();
+            frmupdate.Email = dgvAddressList.SelectedCells[7].Value.ToString();
+            frmupdate.WeChat = dgvAddressList.SelectedCells[8].Value.ToString();
+
+        }
+
+        private void btnExist_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

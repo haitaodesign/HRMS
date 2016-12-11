@@ -12,11 +12,11 @@ namespace HRMS.AddressList
 {
     public partial class frmAdd : Form
     {
+
         public frmAdd()
         {
             InitializeComponent();
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -81,5 +81,7 @@ namespace HRMS.AddressList
                 }
             }
         }
+
+   
     }
 }
