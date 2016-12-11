@@ -185,6 +185,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAddressList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "通讯录管理";
             this.Load += new System.EventHandler(this.frmAddressList_Load);
             this.groupBox1.ResumeLayout(false);

@@ -233,6 +233,7 @@
             this.Controls.Add(this.btnEnter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdd";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

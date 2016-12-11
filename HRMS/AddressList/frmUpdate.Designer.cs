@@ -221,6 +221,7 @@
             this.btnEnter.TabIndex = 19;
             this.btnEnter.Text = "保存";
             this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // frmUpdate
             // 
@@ -232,6 +233,7 @@
             this.Controls.Add(this.btnEnter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUpdate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "修改";
             this.Load += new System.EventHandler(this.frmUpdate_Load);
             this.groupBox1.ResumeLayout(false);
