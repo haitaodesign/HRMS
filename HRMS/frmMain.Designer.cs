@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.人事管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.员工基本信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.通讯录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.系统管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重新登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +43,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tslLoginUser = new System.Windows.Forms.ToolStripLabel();
-            this.通讯录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,8 @@
             // 
             this.人事管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.员工基本信息ToolStripMenuItem,
-            this.通讯录ToolStripMenuItem});
+            this.通讯录ToolStripMenuItem,
+            this.用户管理ToolStripMenuItem});
             this.人事管理ToolStripMenuItem.Name = "人事管理ToolStripMenuItem";
             this.人事管理ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.人事管理ToolStripMenuItem.Text = "人事管理";
@@ -74,6 +76,20 @@
             this.员工基本信息ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.员工基本信息ToolStripMenuItem.Text = "员工基本信息";
             this.员工基本信息ToolStripMenuItem.Click += new System.EventHandler(this.员工基本信息ToolStripMenuItem_Click);
+            // 
+            // 通讯录ToolStripMenuItem
+            // 
+            this.通讯录ToolStripMenuItem.Name = "通讯录ToolStripMenuItem";
+            this.通讯录ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.通讯录ToolStripMenuItem.Text = "通讯录";
+            this.通讯录ToolStripMenuItem.Click += new System.EventHandler(this.通讯录ToolStripMenuItem_Click);
+            // 
+            // 用户管理ToolStripMenuItem
+            // 
+            this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
+            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.用户管理ToolStripMenuItem.Text = "用户管理";
+            this.用户管理ToolStripMenuItem.Click += new System.EventHandler(this.用户管理ToolStripMenuItem_Click);
             // 
             // 系统管理ToolStripMenuItem
             // 
@@ -87,14 +103,14 @@
             // 重新登录ToolStripMenuItem
             // 
             this.重新登录ToolStripMenuItem.Name = "重新登录ToolStripMenuItem";
-            this.重新登录ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.重新登录ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.重新登录ToolStripMenuItem.Text = "重新登录";
             this.重新登录ToolStripMenuItem.Click += new System.EventHandler(this.重新登录ToolStripMenuItem_Click);
             // 
             // 退出系统ToolStripMenuItem
             // 
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
             this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
@@ -151,12 +167,6 @@
             this.tslLoginUser.Size = new System.Drawing.Size(100, 22);
             this.tslLoginUser.Text = "tslLoginUser";
             // 
-            // 通讯录ToolStripMenuItem
-            // 
-            this.通讯录ToolStripMenuItem.Name = "通讯录ToolStripMenuItem";
-            this.通讯录ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.通讯录ToolStripMenuItem.Text = "通讯录";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -166,6 +176,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -193,5 +204,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel tslLoginUser;
         private System.Windows.Forms.ToolStripMenuItem 通讯录ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem;
     }
 }

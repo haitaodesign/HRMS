@@ -73,5 +73,6 @@ namespace HRMS.AddressList
             dgvAddress = dbaccess.GetDataset(sqlStr, "tb_AddressList");
             dgvAddressList.DataSource = dgvAddress.Tables[0];
         }
+
     }
 }

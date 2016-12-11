@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HRMS.AddressList;
 
 namespace HRMS
 {
@@ -40,6 +41,18 @@ namespace HRMS
             Login reLogin = new Login();
             reLogin.ShowDialog();
             tslLoginUser.Text = reLogin.UserInfo;
+        }
+
+        private void 通讯录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddressList frmaddresslist = new frmAddressList();
+            frmaddresslist.ShowDialog();
+        }
+
+        private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserManage.UserList userlist = new UserManage.UserList();
+            userlist.ShowDialog();
         }
     }
 }
