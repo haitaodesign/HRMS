@@ -18,7 +18,7 @@ namespace HRMS.AddressList
         DBAccess dbaccess = new DBAccess();
         DataSet dgvAddress;
         frmUpdate frmupdate = new frmUpdate();
-
+        string sqlStr = "select * from tb_AddressList";
         #endregion
         public frmAddressList()
         {
@@ -27,7 +27,6 @@ namespace HRMS.AddressList
 
         private void frmAddressList_Load(object sender, EventArgs e)
         {
-            string sqlStr = "select * from tb_AddressList";
             dgvAddress = dbaccess.GetDataset(sqlStr, "tb_AddressList");
             dgvAddressList.DataSource = dgvAddress.Tables[0];
         }
@@ -60,6 +59,19 @@ namespace HRMS.AddressList
         private void btnExist_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvAddressList.RowCount < 2)
+            {
+                MessageBox.Show("数据表为空，不可以删除！");
+                return;
+            }
+            dbaccess.GetSQLCommand("delete tb_AddressList where Id='" + frmupdate.Id+ "'");
+
+            dgvAddress = dbaccess.GetDataset(sqlStr, "tb_AddressList");
+            dgvAddressList.DataSource = dgvAddress.Tables[0];
         }
     }
 }
