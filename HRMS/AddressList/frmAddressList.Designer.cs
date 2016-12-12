@@ -133,7 +133,7 @@
             this.dgvAddressList.RowTemplate.Height = 27;
             this.dgvAddressList.Size = new System.Drawing.Size(777, 201);
             this.dgvAddressList.TabIndex = 0;
-            this.dgvAddressList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddressList_CellClick);
+            this.dgvAddressList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAddressList_RowHeaderMouseClick);
             // 
             // groupBox3
             // 

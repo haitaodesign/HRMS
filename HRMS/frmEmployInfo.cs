@@ -58,6 +58,9 @@ namespace HRMS
             tbCurrentName.Text = GridInfo(dgvEmplyInfo);
             tbID.Enabled = false;
             DBAccess.strSQLSelectAll = "select  * from tb_StuffBasic";
+            dgvEmplyInfo.AllowUserToAddRows = false;
+            dgvEmplyInfo.AllowUserToDeleteRows = false;
+            dgvEmplyInfo.ReadOnly = true;
         }
         #endregion
 

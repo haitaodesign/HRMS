@@ -29,6 +29,9 @@ namespace HRMS.AddressList
         {
             dgvAddress = dbaccess.GetDataset(sqlStr, "tb_AddressList");
             dgvAddressList.DataSource = dgvAddress.Tables[0];
+            dgvAddressList.AllowUserToAddRows = false;
+            dgvAddressList.AllowUserToDeleteRows = false;
+            dgvAddressList.ReadOnly = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -42,19 +45,7 @@ namespace HRMS.AddressList
             frmupdate.ShowDialog();
         }
 
-        public void dgvAddressList_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmupdate.Id = Convert.ToInt32(dgvAddressList.SelectedCells[0].Value);
-            frmupdate.uName = dgvAddressList.SelectedCells[1].Value.ToString();
-            frmupdate.Sex = dgvAddressList.SelectedCells[2].Value.ToString();
-            frmupdate.Phone = dgvAddressList.SelectedCells[3].Value.ToString();
-            frmupdate.WorkPhone = dgvAddressList.SelectedCells[4].Value.ToString();
-            frmupdate.HomePhone = dgvAddressList.SelectedCells[5].Value.ToString();
-            frmupdate.QQ = dgvAddressList.SelectedCells[6].Value.ToString();
-            frmupdate.Email = dgvAddressList.SelectedCells[7].Value.ToString();
-            frmupdate.WeChat = dgvAddressList.SelectedCells[8].Value.ToString();
 
-        }
 
         private void btnExist_Click(object sender, EventArgs e)
         {
@@ -80,6 +71,19 @@ namespace HRMS.AddressList
             dgvAddress = dbaccess.GetDataset(sqlstr, "tb_AddressList");
             dgvAddressList.DataSource = dgvAddress.Tables[0];
 
+        }
+
+        private void dgvAddressList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            frmupdate.Id = Convert.ToInt32(dgvAddressList.SelectedCells[0].Value);
+            frmupdate.uName = dgvAddressList.SelectedCells[1].Value.ToString();
+            frmupdate.Sex = dgvAddressList.SelectedCells[2].Value.ToString();
+            frmupdate.Phone = dgvAddressList.SelectedCells[3].Value.ToString();
+            frmupdate.WorkPhone = dgvAddressList.SelectedCells[4].Value.ToString();
+            frmupdate.HomePhone = dgvAddressList.SelectedCells[5].Value.ToString();
+            frmupdate.QQ = dgvAddressList.SelectedCells[6].Value.ToString();
+            frmupdate.Email = dgvAddressList.SelectedCells[7].Value.ToString();
+            frmupdate.WeChat = dgvAddressList.SelectedCells[8].Value.ToString();
         }
     }
 }
