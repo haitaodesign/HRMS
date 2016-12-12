@@ -62,15 +62,6 @@ namespace HRMS
         #endregion
 
         #region 窗体控件的事件
-        /// <summary>
-        /// 单击单元格，将当前记录写入输入框
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dgvEmplyInfo_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
 
         /// <summary>
         /// 根据输入条件查询结果
@@ -194,6 +185,26 @@ namespace HRMS
             pbPhoto.Image = null;
             imgtobinary = new byte[65536];
             imageModified = true;
+        }
+
+        /// <summary>
+        /// 单击行头部获得该行的信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvEmplyInfo_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tbID.Text = dgvEmplyInfo.SelectedCells[0].Value.ToString();
+            tbName.Text = dgvEmplyInfo.SelectedCells[1].Value.ToString();
+            tbSex.Text = dgvEmplyInfo.SelectedCells[2].Value.ToString();
+            tbJob.Text = dgvEmplyInfo.SelectedCells[3].Value.ToString();
+            tbPhone.Text = dgvEmplyInfo.SelectedCells[4].Value.ToString();
+            tbAddress.Text = dgvEmplyInfo.SelectedCells[5].Value.ToString();
+            tbEmail.Text = dgvEmplyInfo.SelectedCells[6].Value.ToString();
+            tbMemo.Text = dgvEmplyInfo.SelectedCells[7].Value.ToString();
+            tbCurrentName.Text = tbName.Text;
+            MemoryStream ms = new MemoryStream((byte[])dgvEmplyInfo.SelectedCells[8].Value);
+            pbPhoto.Image = Image.FromStream(ms);
         }
         #endregion
 
@@ -339,20 +350,6 @@ namespace HRMS
 
 
         #endregion
-
-        private void dgvEmplyInfo_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            tbID.Text = dgvEmplyInfo.SelectedCells[0].Value.ToString();
-            tbName.Text = dgvEmplyInfo.SelectedCells[1].Value.ToString();
-            tbSex.Text = dgvEmplyInfo.SelectedCells[2].Value.ToString();
-            tbJob.Text = dgvEmplyInfo.SelectedCells[3].Value.ToString();
-            tbPhone.Text = dgvEmplyInfo.SelectedCells[4].Value.ToString();
-            tbAddress.Text = dgvEmplyInfo.SelectedCells[5].Value.ToString();
-            tbEmail.Text = dgvEmplyInfo.SelectedCells[6].Value.ToString();
-            tbMemo.Text = dgvEmplyInfo.SelectedCells[7].Value.ToString();
-            tbCurrentName.Text = tbName.Text;
-            MemoryStream ms = new MemoryStream((byte[])dgvEmplyInfo.SelectedCells[8].Value);
-            pbPhoto.Image = Image.FromStream(ms);
-        }
+       
     }
 }
