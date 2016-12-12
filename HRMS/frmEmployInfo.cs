@@ -69,17 +69,7 @@ namespace HRMS
         /// <param name="e"></param>
         private void dgvEmplyInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbID.Text = dgvEmplyInfo.SelectedCells[0].Value.ToString();
-            tbName.Text = dgvEmplyInfo.SelectedCells[1].Value.ToString();
-            tbSex.Text = dgvEmplyInfo.SelectedCells[2].Value.ToString();
-            tbJob.Text = dgvEmplyInfo.SelectedCells[3].Value.ToString();
-            tbPhone.Text = dgvEmplyInfo.SelectedCells[4].Value.ToString();
-            tbAddress.Text = dgvEmplyInfo.SelectedCells[5].Value.ToString();
-            tbEmail.Text = dgvEmplyInfo.SelectedCells[6].Value.ToString();
-            tbMemo.Text = dgvEmplyInfo.SelectedCells[7].Value.ToString();
-            tbCurrentName.Text = tbName.Text;
-            MemoryStream ms = new MemoryStream((byte[])dgvEmplyInfo.SelectedCells[8].Value);
-            pbPhoto.Image = Image.FromStream(ms);
+           
         }
 
         /// <summary>
@@ -347,8 +337,22 @@ namespace HRMS
             }
         }
 
+
         #endregion
 
-        
+        private void dgvEmplyInfo_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tbID.Text = dgvEmplyInfo.SelectedCells[0].Value.ToString();
+            tbName.Text = dgvEmplyInfo.SelectedCells[1].Value.ToString();
+            tbSex.Text = dgvEmplyInfo.SelectedCells[2].Value.ToString();
+            tbJob.Text = dgvEmplyInfo.SelectedCells[3].Value.ToString();
+            tbPhone.Text = dgvEmplyInfo.SelectedCells[4].Value.ToString();
+            tbAddress.Text = dgvEmplyInfo.SelectedCells[5].Value.ToString();
+            tbEmail.Text = dgvEmplyInfo.SelectedCells[6].Value.ToString();
+            tbMemo.Text = dgvEmplyInfo.SelectedCells[7].Value.ToString();
+            tbCurrentName.Text = tbName.Text;
+            MemoryStream ms = new MemoryStream((byte[])dgvEmplyInfo.SelectedCells[8].Value);
+            pbPhoto.Image = Image.FromStream(ms);
+        }
     }
 }

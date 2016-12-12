@@ -229,6 +229,7 @@
             this.dgvEmplyInfo.Size = new System.Drawing.Size(869, 311);
             this.dgvEmplyInfo.TabIndex = 6;
             this.dgvEmplyInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmplyInfo_CellClick);
+            this.dgvEmplyInfo.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmplyInfo_RowHeaderMouseClick);
             // 
             // label4
             // 
