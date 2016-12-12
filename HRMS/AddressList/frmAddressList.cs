@@ -74,5 +74,12 @@ namespace HRMS.AddressList
             dgvAddressList.DataSource = dgvAddress.Tables[0];
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string sqlstr = "select * from tb_AddressList where " + cbAddressType.Text.ToString() + "='" + tbAddressValue.Text.ToString() + "'";
+            dgvAddress = dbaccess.GetDataset(sqlstr, "tb_AddressList");
+            dgvAddressList.DataSource = dgvAddress.Tables[0];
+
+        }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbAddressValue = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbAddressType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbAddressValue);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cbAddressType);
             this.groupBox1.Controls.Add(this.label1);
@@ -69,13 +69,14 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox1
+            // tbAddressValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(394, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 25);
-            this.textBox1.TabIndex = 3;
+            this.tbAddressValue.Location = new System.Drawing.Point(394, 21);
+            this.tbAddressValue.Name = "tbAddressValue";
+            this.tbAddressValue.Size = new System.Drawing.Size(121, 25);
+            this.tbAddressValue.TabIndex = 3;
             // 
             // label2
             // 
@@ -89,10 +90,20 @@
             // cbAddressType
             // 
             this.cbAddressType.FormattingEnabled = true;
+            this.cbAddressType.Items.AddRange(new object[] {
+            "Name",
+            "Sex",
+            "Phone",
+            "WorkPhone",
+            "HomePhone",
+            "Email",
+            "QQ",
+            "WeChat"});
             this.cbAddressType.Location = new System.Drawing.Point(100, 22);
             this.cbAddressType.Name = "cbAddressType";
             this.cbAddressType.Size = new System.Drawing.Size(121, 23);
             this.cbAddressType.TabIndex = 1;
+            this.cbAddressType.Text = "Name";
             // 
             // label1
             // 
@@ -202,7 +213,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbAddressValue;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbAddressType;
         private System.Windows.Forms.Label label1;
