@@ -79,6 +79,39 @@ namespace HRMS
             DBAccess.sqlConnection.Close();
         }
         #endregion
-        
+
+        #region  自动编号
+        /// <summary>
+        /// 在添加信息时自动计算编号.
+        /// </summary>
+        /// <param name="TableName">表名</param>
+        /// <param name="ID">字段名</param>
+        /// <returns>返回String对象</returns>
+        public String GetAutocoding(string TableName, string ID)
+        {
+            //查找指定表中ID号为最大的记录
+            SqlDataReader MyDR = dbAccess.GetReaderofCommand("select max(" + ID + ") NID from " + TableName);
+            int Num = 0;
+            if (MyDR.HasRows)   //当查找到记录时
+            {
+                MyDR.Read();    //读取当前记录
+                if (MyDR[0].ToString() == "")
+                    return "0001";
+                Num = Convert.ToInt32(MyDR[0].ToString());  //将当前找到的最大编号转换成整数
+                ++Num;  //最大编号加1
+                string s = string.Format("{0:0000}", Num);  //将整数值转换成指定格式的字符串
+                return s;   //返回自动生成的编号
+            }
+            else
+            {
+                return "0001";  //当数据表没有记录时，返回0001
+            }
+        }
+        #endregion
+
+        #region MyRegion
+
+        #endregion
+
     }
 }

@@ -18,8 +18,8 @@ namespace HRMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
-            Application.Run(new frmEmployInfo());
-            //Application.Run(new frmMain());
-        } 
+            //Application.Run(new frmEmployInfo());
+            Application.Run(new frmMain());
+        }
     }
 }

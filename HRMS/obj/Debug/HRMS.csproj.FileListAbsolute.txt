@@ -13,3 +13,4 @@ E:\2016~17第三学期\C#桌面应用程序开发\demo\HRMS\HRMS\obj\Debug\HRMS.
 E:\2016~17第三学期\C#桌面应用程序开发\demo\HRMS\HRMS\obj\Debug\HRMS.AddressList.frmUpdate.resources
 E:\2016~17第三学期\C#桌面应用程序开发\demo\HRMS\HRMS\obj\Debug\HRMS.AddressList.frmAddressList.resources
 E:\2016~17第三学期\C#桌面应用程序开发\demo\HRMS\HRMS\obj\Debug\HRMS.UserManage.UserList.resources
+E:\2016~17第三学期\C#桌面应用程序开发\demo\HRMS\HRMS\obj\Debug\HRMS.UserManage.UserAdd.resources
