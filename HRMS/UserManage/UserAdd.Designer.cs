@@ -97,6 +97,7 @@
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "退出";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 

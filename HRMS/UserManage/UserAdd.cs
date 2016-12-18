@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HRMS.UserManage
 {
     public partial class UserAdd : Form
     {
-        #region 定义全局变量
+        #region 定义公共变量
         DBAccess dbaccess = new DBAccess();
         Modules modules = new Modules();
         public DataSet DbSet;
@@ -30,8 +24,16 @@ namespace HRMS.UserManage
                 MessageBox.Show("用户名和密码不能为空！");
                 return;
             }
+            DbSet = dbaccess.GetDataset("select Name from tb_Login where Name='" + tbName.Text + "'", "tb_Login");
             if (this.Text == "添加用户")
             {
+                if (DbSet.Tables[0].Rows.Count > 0)
+                {
+                    MessageBox.Show("当前用户名已存在，请重新输入！");
+                    tbName.Text = "";
+                    tbPassword.Text = "";
+                    return;
+                }
                 AutoID = modules.GetAutocoding("tb_Login", "ID");
                 dbaccess.GetReaderofCommand("insert into tb_Login (ID,Name,Password) values('" + AutoID + "','" + tbName.Text + "','" + tbPassword.Text + "')");
                 MessageBox.Show("添加成功");
@@ -41,7 +43,6 @@ namespace HRMS.UserManage
                 dbaccess.GetSQLCommand("update tb_Login set Name='" + tbName.Text + "',Password=' " + tbPassword.Text+"' where ID='" + Modules.nUserID + "'");
                 MessageBox.Show("修改成功！");
             }
-            
         }
 
         private void UserAdd_Load(object sender, EventArgs e)
@@ -53,6 +54,11 @@ namespace HRMS.UserManage
                 tbName.Text = DbSet.Tables[0].Rows[0][0].ToString();
                 tbPassword.Text = DbSet.Tables[0].Rows[0][1].ToString();
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
