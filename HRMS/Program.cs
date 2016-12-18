@@ -18,9 +18,9 @@ namespace HRMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
-            Application.Run(new UserList());
+            //Application.Run(new UserList());
             //Application.Run(new frmEmployInfo());
-            //Application.Run(new frmMain());
+            Application.Run(new frmMain());
         }
     }
 }

@@ -13,6 +13,11 @@ namespace HRMS.UserManage
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 点击添加弹出用户添加窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             UserAdd add = new UserAdd();
@@ -20,6 +25,11 @@ namespace HRMS.UserManage
             add.ShowDialog();
         }
 
+        /// <summary>
+        /// 初始化加载用户列表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserList_Load(object sender, EventArgs e)
         {
             userlist=dbaccess.GetDataset("select ID as 编号, Name as 用户名 from tb_Login", "tb_Login");
@@ -28,7 +38,11 @@ namespace HRMS.UserManage
             dgvUserInfo.AllowUserToDeleteRows = false;
             dgvUserInfo.ReadOnly = true;
         }
-
+        /// <summary>
+        /// 点击弹出修改对话框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (Modules.nUserID.Trim() == "0001")
@@ -41,6 +55,11 @@ namespace HRMS.UserManage
             update.ShowDialog();
         }
 
+        /// <summary>
+        /// 点击单元格给公共ID和用户名赋值
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvUserInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvUserInfo.RowCount > 1)
