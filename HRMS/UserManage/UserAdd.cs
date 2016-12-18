@@ -15,6 +15,7 @@ namespace HRMS.UserManage
         public UserAdd()
         {
             InitializeComponent();
+            this.ControlBox = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

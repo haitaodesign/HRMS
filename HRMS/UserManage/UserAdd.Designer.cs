@@ -118,7 +118,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "UserAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserAdd";
             this.Load += new System.EventHandler(this.UserAdd_Load);
             this.groupBox1.ResumeLayout(false);

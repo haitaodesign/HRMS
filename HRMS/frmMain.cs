@@ -28,7 +28,7 @@ namespace HRMS
         {
             Login login = new Login();
             login.ShowDialog();
-            tslLoginUser.Text = login.UserInfo;
+            tslLoginUser.Text = DBAccess.strLoginName;
         }
 
         private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace HRMS
         {
             Login reLogin = new Login();
             reLogin.ShowDialog();
-            tslLoginUser.Text = reLogin.UserInfo;
+            tslLoginUser.Text = DBAccess.strLoginName;
         }
 
         private void 通讯录ToolStripMenuItem_Click(object sender, EventArgs e)

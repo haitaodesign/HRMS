@@ -65,6 +65,7 @@
             // 
             this.tbPassword.Location = new System.Drawing.Point(140, 112);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(216, 25);
             this.tbPassword.TabIndex = 3;
             // 
@@ -99,9 +100,11 @@
             this.Controls.Add(this.tbAccount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "用户登录";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,37 +15,26 @@ namespace HRMS
         public Login()
         {
             InitializeComponent();
+            this.ControlBox = false;
         }
+        DBAccess dbaccess = new DBAccess();
 
-        public string UserInfo;
-
-        //构建数据库连接字符串
-        String sqlConnStr = "server=121.42.31.90;uid=sa;pwd=LIhaitao177581+;database=HRMS";
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection())
+           if(tbAccount.Text!="" && tbPassword.Text != "")
             {
-                //建立数据库连接
-                conn.ConnectionString = sqlConnStr;
-                using (SqlCommand comd = new SqlCommand())
+                SqlDataReader sdr = dbaccess.GetReaderofCommand("select * from tb_Login where Name='" + tbAccount.Text.Trim() + "' and Password='" + tbPassword.Text.Trim() + "'");
+                bool isTrue = sdr.Read();
+                if (isTrue)
                 {
-                    conn.Open();
-                    //发送SQL语句
-                    comd.CommandText = "select  *  from tb_Login where Name='"+tbAccount.Text+"'and Password='"+tbPassword.Text+"'";
-                    comd.CommandType = CommandType.Text;
-                    comd.Connection = conn;
-                    SqlDataReader dr = comd.ExecuteReader();
-                    bool read = dr.Read();
-                    if (read)
-                    {
-                        this.Close();
-                        UserInfo = tbAccount.Text;
-                    }
-                    else
-                    {
-                        MessageBox.Show("用户名或密码错误！");
-                    }
+                    DBAccess.strLoginName = tbAccount.Text.Trim();
+                    DBAccess.nLoginID = sdr.GetString(0);
+                    this.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("请将登录信息添写完整！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -53,6 +42,27 @@ namespace HRMS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        /// <summary>
+        /// 测试数据库连接是否可用。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Login_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                dbaccess.OpenConnection();
+                dbaccess.CloseConnection();
+                tbAccount.Text = "";
+                tbPassword.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("数据库连接失败。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
         }
     }
 }

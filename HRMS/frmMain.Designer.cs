@@ -73,21 +73,21 @@
             // 员工基本信息ToolStripMenuItem
             // 
             this.员工基本信息ToolStripMenuItem.Name = "员工基本信息ToolStripMenuItem";
-            this.员工基本信息ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.员工基本信息ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.员工基本信息ToolStripMenuItem.Text = "员工基本信息";
             this.员工基本信息ToolStripMenuItem.Click += new System.EventHandler(this.员工基本信息ToolStripMenuItem_Click);
             // 
             // 通讯录ToolStripMenuItem
             // 
             this.通讯录ToolStripMenuItem.Name = "通讯录ToolStripMenuItem";
-            this.通讯录ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.通讯录ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.通讯录ToolStripMenuItem.Text = "通讯录";
             this.通讯录ToolStripMenuItem.Click += new System.EventHandler(this.通讯录ToolStripMenuItem_Click);
             // 
             // 用户管理ToolStripMenuItem
             // 
             this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
-            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.用户管理ToolStripMenuItem.Text = "用户管理";
             this.用户管理ToolStripMenuItem.Click += new System.EventHandler(this.用户管理ToolStripMenuItem_Click);
             // 
@@ -177,7 +177,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMain";
+            this.Text = "人力资源管理系统主界面";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

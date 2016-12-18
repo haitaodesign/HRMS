@@ -12,7 +12,7 @@ namespace HRMS
     class DBAccess
     {
         #region  全局变量
-        public static int nLoginID = 0;             //定义全局变量，记录当前登录的用户编号
+        public static string nLoginID = "";             //定义全局变量，记录当前登录的用户编号
         public static string strLoginName = "";     //定义全局变量，记录当前登录的用户名
         //定义全局变量，记录“基础信息”各窗体中的表名及SQL语句
         public static string strSQLCmdString = "", strTable = "", strField = "";
