@@ -49,5 +49,22 @@ namespace HRMS.UserManage
                 Modules.strUserName = dgvUserInfo[1, dgvUserInfo.CurrentCell.RowIndex].Value.ToString();
             }
         }
+
+        /// <summary>
+        /// 删除用户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (Modules.nUserID.Trim() == "0001")
+            {
+                MessageBox.Show("不能删除系统管理员账号！");
+                return;
+            }
+            dbaccess.GetSQLCommand("delete tb_Login where ID='" + Modules.nUserID.Trim() + "'");
+            userlist = dbaccess.GetDataset("select ID as 编号,Name as 用户名 from tb_Login", "tb_Login");
+            dgvUserInfo.DataSource = userlist.Tables[0];
+        }
     }
 }

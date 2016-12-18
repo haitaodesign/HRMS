@@ -27,6 +27,7 @@ namespace HRMS.UserManage
             DbSet = dbaccess.GetDataset("select Name from tb_Login where Name='" + tbName.Text + "'", "tb_Login");
             if (this.Text == "添加用户")
             {
+                //判断用户名是否重复
                 if (DbSet.Tables[0].Rows.Count > 0)
                 {
                     MessageBox.Show("当前用户名已存在，请重新输入！");
