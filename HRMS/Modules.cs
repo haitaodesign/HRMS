@@ -8,14 +8,14 @@ using System.Data.SqlClient;
 
 namespace HRMS
 {
-    class Modules
+    public class Modules
     {
         #region  公共变量
         DBAccess dbAccess = new DBAccess();   //声明DBAccess类的一个对象，以调用其方法
         public static string strSQLCommand = "";  //用来存储添加或修改的SQL语句
         public static string strFilter = "";  //存储查询条件
         public static int nAddressID = 0;  //存储通讯录添加修改时的ID编号
-        public static int nUserID = 0;  //存储用户的ID编号
+        public static string nUserID = "";  //存储用户的ID编号
         public static string strUserName = "";    //存储用户名
         #endregion
 

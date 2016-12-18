@@ -46,6 +46,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "添加";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -55,6 +56,7 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "修改";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -95,6 +97,7 @@
             this.dgvUserInfo.RowTemplate.Height = 27;
             this.dgvUserInfo.Size = new System.Drawing.Size(446, 215);
             this.dgvUserInfo.TabIndex = 5;
+            this.dgvUserInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserInfo_CellClick);
             // 
             // UserList
             // 
@@ -106,6 +109,7 @@
             this.Name = "UserList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "用户管理";
+            this.Load += new System.EventHandler(this.UserList_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).EndInit();
             this.ResumeLayout(false);

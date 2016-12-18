@@ -119,6 +119,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "UserAdd";
             this.Text = "UserAdd";
+            this.Load += new System.EventHandler(this.UserAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
