@@ -13,6 +13,8 @@ namespace HRMS
 {
     public partial class frmMain : Form
     {
+        string appPath = Application.StartupPath + "\\";
+        string fileName = string.Empty;
         public frmMain()
         {
             InitializeComponent();
@@ -26,9 +28,17 @@ namespace HRMS
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.ShowDialog();
-            tslLoginUser.Text = DBAccess.strLoginName;
+            fileName = appPath + "Configuration.txt";
+            if (DBAccess.LoadConfiguration(fileName))
+            {
+                Login login = new Login();
+                login.ShowDialog();
+                tslLoginUser.Text = DBAccess.strLoginName;
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)

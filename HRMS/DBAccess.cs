@@ -19,7 +19,8 @@ namespace HRMS
         //定义一个SqlConnection类型的公共变量My_con，用于判断数据库是否连接成功
         public static SqlConnection sqlConnection;
         //public static string strSQLConnection = "Data Source=B313-14\\SQLEXPRESS;Database=HRMS;User id=bao;PWD=123";
-        public static string strSQLConnection = "server=121.42.31.90;uid=sa;pwd=LIhaitao177581+;database=HRMS";
+        //public static string strSQLConnection = "server=121.42.31.90;uid=sa;pwd=LIhaitao177581+;database=HRMS";
+        public static string strSQLConnection = "";
 
         public static int nLoginType = 0;            //用户登录与重新登录的标识
         public static string strSQLSelectAll = "Select * from tb_StuffBasic"; //存储职工基本信息表中的SQL语句
@@ -28,13 +29,13 @@ namespace HRMS
         #endregion
 
         #region  读取配置文件
-        public static bool LoadConfiguration()
+        public static bool LoadConfiguration(string fileName)
         {
             FileStream fileStream = null;
             StreamReader streamReader = null;
             try
             {
-                fileStream = new FileStream("Configuration.txt", FileMode.Open, FileAccess.Read);
+                fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
                 streamReader = new StreamReader(fileStream);
                 strSQLConnection = streamReader.ReadLine();
                 return true;
