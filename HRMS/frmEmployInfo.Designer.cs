@@ -191,6 +191,7 @@
             this.cbQueryType.Name = "cbQueryType";
             this.cbQueryType.Size = new System.Drawing.Size(144, 23);
             this.cbQueryType.TabIndex = 2;
+            this.cbQueryType.Text = "ID";
             // 
             // label3
             // 

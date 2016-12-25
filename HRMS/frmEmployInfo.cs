@@ -208,6 +208,7 @@ namespace HRMS
             tbCurrentName.Text = tbName.Text;
             MemoryStream ms = new MemoryStream((byte[])dgvEmplyInfo.SelectedCells[8].Value);
             pbPhoto.Image = Image.FromStream(ms);
+          
         }
         #endregion
 

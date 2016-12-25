@@ -31,7 +31,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnLimit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvUserInfo = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
@@ -50,7 +49,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(129, 24);
+            this.btnUpdate.Location = new System.Drawing.Point(183, 24);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 36);
             this.btnUpdate.TabIndex = 1;
@@ -60,7 +59,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(244, 24);
+            this.btnDelete.Location = new System.Drawing.Point(352, 24);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 36);
             this.btnDelete.TabIndex = 2;
@@ -68,19 +67,9 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnLimit
-            // 
-            this.btnLimit.Location = new System.Drawing.Point(359, 24);
-            this.btnLimit.Name = "btnLimit";
-            this.btnLimit.Size = new System.Drawing.Size(75, 36);
-            this.btnLimit.TabIndex = 3;
-            this.btnLimit.Text = "权限";
-            this.btnLimit.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.btnLimit);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -122,7 +111,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnLimit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvUserInfo;
     }
