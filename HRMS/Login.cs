@@ -41,7 +41,14 @@ namespace HRMS
         //取消退出程序
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (this.Text == "重新登录")
+            {
+                this.Close();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
         /// <summary>

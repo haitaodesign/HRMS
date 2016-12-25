@@ -20,13 +20,17 @@ namespace HRMS
         #region 定义公共变量
         DBAccess dbacces = new DBAccess();
         DataSet datasetgrid;
-        public static int curID=0;
+        public static int curID = 0;
         public static string queryType;
         public static string queryValue;
+        public static string queryType2;
+        public static string queryValue2;
+        public static string sqlStr;
+
         public static byte[] imgtobinary;
         //设定添加或者删除
         public static int OperationType;
-        public static bool imageModified=false;
+        public static bool imageModified = false;
 
         #endregion
 
@@ -73,12 +77,41 @@ namespace HRMS
         /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            sqlStr = "select * from tb_StuffBasic where ";
+            queryValue = tbQueryValue.Text.Trim();
+            queryValue2 = tbQueryValue2.Text.Trim();
             queryType = cbQueryType.SelectedItem.ToString();
-            queryValue = tbQueryValue.Text;
-            String sqlStr = "select * from tb_StuffBasic where " + queryType + "='" + queryValue + "'";
-            datasetgrid = dbacces.GetDataset(sqlStr, "tb_StuffBasic");
-            dgvEmplyInfo.DataSource = datasetgrid.Tables[0];
-            tbCurrentName.Text = GridInfo(dgvEmplyInfo);
+            queryType2 = cbQueryType2.SelectedItem.ToString();
+            if (queryValue == "" && queryValue2 == "")
+            {
+                MessageBox.Show("查询条件不能为空！");
+            }
+            else
+            {
+                if (queryValue != "")
+                {
+                    sqlStr += queryType + "='" + queryValue + "'";
+                }else if (queryValue2 != "" && queryValue!="")
+                {
+                    sqlStr += " and " + queryType2 + "='" + queryValue2 + "'";
+                }else if (queryValue == ""&& queryValue2!="")
+                {
+                    sqlStr += queryType2 + "='" + queryValue2 + "'";
+                }
+
+                datasetgrid = dbacces.GetDataset(sqlStr, "tb_StuffBasic");
+                if (datasetgrid.Tables.Count == 1 && datasetgrid.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("没有符合查询条件的数据！");
+                }
+                else
+                {
+                    dgvEmplyInfo.DataSource = datasetgrid.Tables[0];
+                    tbCurrentName.Text = GridInfo(dgvEmplyInfo);
+                }
+
+            }
+
         }
 
         /// <summary>
@@ -115,7 +148,7 @@ namespace HRMS
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(dgvEmplyInfo.RowCount < 2)
+            if (dgvEmplyInfo.RowCount < 2)
             {
                 MessageBox.Show("数据表为空，不可以删除！");
                 return;
@@ -208,7 +241,7 @@ namespace HRMS
             tbCurrentName.Text = tbName.Text;
             MemoryStream ms = new MemoryStream((byte[])dgvEmplyInfo.SelectedCells[8].Value);
             pbPhoto.Image = Image.FromStream(ms);
-          
+
         }
         #endregion
 
@@ -354,6 +387,6 @@ namespace HRMS
 
 
         #endregion
-       
+
     }
 }

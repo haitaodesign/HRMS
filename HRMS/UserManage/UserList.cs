@@ -32,8 +32,7 @@ namespace HRMS.UserManage
         /// <param name="e"></param>
         private void UserList_Load(object sender, EventArgs e)
         {
-            userlist=dbaccess.GetDataset("select ID as 编号, Name as 用户名 from tb_Login", "tb_Login");
-            dgvUserInfo.DataSource = userlist.Tables[0];
+            LoadUserList();
             dgvUserInfo.AllowUserToAddRows = false;
             dgvUserInfo.AllowUserToDeleteRows = false;
             dgvUserInfo.ReadOnly = true;
@@ -83,6 +82,15 @@ namespace HRMS.UserManage
             }
             dbaccess.GetSQLCommand("delete tb_Login where ID='" + Modules.nUserID.Trim() + "'");
             userlist = dbaccess.GetDataset("select ID as 编号,Name as 用户名 from tb_Login", "tb_Login");
+            dgvUserInfo.DataSource = userlist.Tables[0];
+        }
+
+        /// <summary>
+        /// 加载用户列表
+        /// </summary>
+        public void LoadUserList()
+        {
+            userlist = dbaccess.GetDataset("select ID as 编号, Name as 用户名 from tb_Login", "tb_Login");
             dgvUserInfo.DataSource = userlist.Tables[0];
         }
     }

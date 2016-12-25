@@ -9,6 +9,7 @@ namespace HRMS.UserManage
         #region 定义公共变量
         DBAccess dbaccess = new DBAccess();
         Modules modules = new Modules();
+        UserList userList;
         public DataSet DbSet;
         public static string AutoID = "";
         #endregion
@@ -39,11 +40,13 @@ namespace HRMS.UserManage
                 AutoID = modules.GetAutocoding("tb_Login", "ID");
                 dbaccess.GetReaderofCommand("insert into tb_Login (ID,Name,Password) values('" + AutoID + "','" + tbName.Text + "','" + tbPassword.Text + "')");
                 MessageBox.Show("添加成功");
+                userList.LoadUserList();
             }
             if (this.Text == "修改用户")
             {
                 dbaccess.GetSQLCommand("update tb_Login set Name='" + tbName.Text + "',Password=' " + tbPassword.Text+"' where ID='" + Modules.nUserID + "'");
                 MessageBox.Show("修改成功！");
+                userList.LoadUserList();
             }
         }
 
@@ -61,6 +64,7 @@ namespace HRMS.UserManage
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
     }
 }

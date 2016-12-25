@@ -63,6 +63,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.tbQueryValue2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbQueryType2 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -212,7 +216,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(829, 52);
+            this.btnSearch.Location = new System.Drawing.Point(829, 85);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 30);
             this.btnSearch.TabIndex = 5;
@@ -409,11 +413,59 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // tbQueryValue2
+            // 
+            this.tbQueryValue2.Location = new System.Drawing.Point(528, 93);
+            this.tbQueryValue2.Name = "tbQueryValue2";
+            this.tbQueryValue2.Size = new System.Drawing.Size(144, 25);
+            this.tbQueryValue2.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(433, 95);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(89, 20);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "查询条件";
+            // 
+            // cbQueryType2
+            // 
+            this.cbQueryType2.FormattingEnabled = true;
+            this.cbQueryType2.Items.AddRange(new object[] {
+            "ID",
+            "Name",
+            "Sex",
+            "Phone",
+            "Position",
+            "Address",
+            "Email"});
+            this.cbQueryType2.Location = new System.Drawing.Point(150, 94);
+            this.cbQueryType2.Name = "cbQueryType2";
+            this.cbQueryType2.Size = new System.Drawing.Size(144, 23);
+            this.cbQueryType2.TabIndex = 35;
+            this.cbQueryType2.Text = "Sex";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(54, 95);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 20);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "查询类型";
+            // 
             // frmEmployInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1268, 673);
+            this.Controls.Add(this.tbQueryValue2);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.cbQueryType2);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -474,5 +526,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox tbQueryValue2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbQueryType2;
+        private System.Windows.Forms.Label label14;
     }
 }

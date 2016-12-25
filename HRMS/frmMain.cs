@@ -48,7 +48,9 @@ namespace HRMS
 
         private void 重新登录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             Login reLogin = new Login();
+            reLogin.Text = "重新登录";
             reLogin.ShowDialog();
             tslLoginUser.Text = DBAccess.strLoginName;
         }
