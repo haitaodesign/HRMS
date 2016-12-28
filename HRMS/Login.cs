@@ -16,6 +16,8 @@ namespace HRMS
         {
             InitializeComponent();
             this.ControlBox = false;
+            tbAccount.Text = "admin";
+            tbPassword.Text = "123456";
         }
         DBAccess dbaccess = new DBAccess();
 

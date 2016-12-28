@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -91,10 +92,12 @@ namespace HRMS
                 if (queryValue != "")
                 {
                     sqlStr += queryType + "='" + queryValue + "'";
-                }else if (queryValue2 != "" && queryValue!="")
+                }
+                else if (queryValue2 != "" && queryValue != "")
                 {
                     sqlStr += " and " + queryType2 + "='" + queryValue2 + "'";
-                }else if (queryValue == ""&& queryValue2!="")
+                }
+                else if (queryValue == "" && queryValue2 != "")
                 {
                     sqlStr += queryType2 + "='" + queryValue2 + "'";
                 }
@@ -161,7 +164,8 @@ namespace HRMS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string allFields = "Name,Sex,Phone,Position,Address,Email,Memo";
+
+            string allFields = " (Name,Sex,Position,Phone,Address,Email,Memo";
             string sqlStr = null;
             try
             {
@@ -169,6 +173,15 @@ namespace HRMS
                 {
                     sqlStr = SaveEmployInfor(allFields);
                     dbacces.GetSQLCommand(sqlStr);
+                    if (OperationType == 1)
+                    {
+                        //返回Id字段的最大值
+                        string queryMaxId = "select max(ID) as maxId from tb_StuffBasic";
+                        SqlDataReader sqlReader = dbacces.GetReaderofCommand(queryMaxId);
+                        sqlReader.Read();
+                        tbID.Text = sqlReader["maxId"].ToString();
+                        sqlReader.Close();
+                    }
                 }
                 if (imageModified)
                 {
@@ -177,9 +190,9 @@ namespace HRMS
                 }
                 btnCancel_Click(sender, e);
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("请输入正确的职工信息！");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -335,14 +348,14 @@ namespace HRMS
             {
                 result = "insert into tb_StuffBasic";
                 result += Str;
-                result += ") values('";
+                result += ") values ('";
                 result += tbName.Text.Trim() + "','";
                 result += tbSex.Text.Trim() + "','";
                 result += tbJob.Text.Trim() + "','";
                 result += tbPhone.Text.Trim() + "','";
                 result += tbAddress.Text.Trim() + "','";
                 result += tbEmail.Text.Trim() + "','";
-                result += tbMemo.Text.Trim() + "','";
+                result += tbMemo.Text.Trim() + "')";
             }
             else if (OperationType == 2)
             {

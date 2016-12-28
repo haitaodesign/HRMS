@@ -19,7 +19,6 @@ E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.exe
 E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.pdb
 E:\Github仓库\HRMS\HRMS\bin\Debug\HRMS.exe
 E:\Github仓库\HRMS\HRMS\bin\Debug\HRMS.pdb
-E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.csprojResolveAssemblyReference.cache
 E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.AddressList.frmAdd.resources
 E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.AddressList.frmAddressList.resources
 E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.AddressList.frmUpdate.resources

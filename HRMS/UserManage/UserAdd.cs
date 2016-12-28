@@ -21,7 +21,7 @@ namespace HRMS.UserManage
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(tbName.Text=="" && tbPassword.Text == "")
+            if (tbName.Text == "" && tbPassword.Text == "")
             {
                 MessageBox.Show("用户名和密码不能为空！");
                 return;
@@ -44,7 +44,7 @@ namespace HRMS.UserManage
             }
             if (this.Text == "修改用户")
             {
-                dbaccess.GetSQLCommand("update tb_Login set Name='" + tbName.Text + "',Password=' " + tbPassword.Text+"' where ID='" + Modules.nUserID + "'");
+                dbaccess.GetSQLCommand("update tb_Login set Name='" + tbName.Text + "',Password=' " + tbPassword.Text + "' where ID='" + Modules.nUserID + "'");
                 MessageBox.Show("修改成功！");
                 userList.LoadUserList();
             }
@@ -56,15 +56,26 @@ namespace HRMS.UserManage
             {
                 string ID = Modules.nUserID;
                 DbSet = dbaccess.GetDataset("select Name,Password from tb_Login where ID='" + ID + "'", "tb_Login");
-                tbName.Text = DbSet.Tables[0].Rows[0][0].ToString();
-                tbPassword.Text = DbSet.Tables[0].Rows[0][1].ToString();
-            }
-        }
+                try
+                {
+                    tbName.Text = DbSet.Tables[0].Rows[0][0].ToString();
+                    tbPassword.Text = DbSet.Tables[0].Rows[0][1].ToString();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("请选择修改用户！");
+                }
+                this.Close();
 
+            }
+
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
 
         }
+
     }
 }
+

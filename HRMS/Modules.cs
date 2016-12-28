@@ -109,9 +109,7 @@ namespace HRMS
         }
         #endregion
 
-        #region MyRegion
-
-        #endregion
+        
 
     }
 }
