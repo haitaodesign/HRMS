@@ -16,11 +16,14 @@ namespace HRMS
         {
             InitializeComponent();
             this.ControlBox = false;
-            tbAccount.Text = "admin";
-            tbPassword.Text = "123456";
         }
         DBAccess dbaccess = new DBAccess();
 
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
            if(tbAccount.Text!="" && tbPassword.Text != "")

@@ -29,3 +29,4 @@ E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.Properties.Resources.resources
 E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.UserManage.UserAdd.resources
 E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.UserManage.UserList.resources
 E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.csproj.GenerateResource.Cache
+E:\Github仓库\HRMS\HRMS\obj\Debug\HRMS.csprojResolveAssemblyReference.cache
